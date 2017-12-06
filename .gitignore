@@ -1,2 +1,15 @@
 node_modules/
 .vscode/
+/dist
+/lib
+/es
+.idea/
+Thumbs.db
+*~
+~*
+*.diff
+*.patch
+*.bak
+*.log
+*.log.*
+npm-debug.log
