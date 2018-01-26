@@ -2,7 +2,7 @@ import React from 'react';
 import qrcode from './QRinit';
 import classNames from 'classnames';
 
-export default class Qrcode extends React.Component {
+class Qrcode extends React.Component {
   static defaultProps = {
     prefixCls: 'fish-qrcode',
     className: '',
@@ -16,13 +16,10 @@ export default class Qrcode extends React.Component {
   }
   constructor(props) {
     super(props);
-
   }
 
-  qrnode = (_dom) => {
-    const props = this.props
-    let qrnode = new qrcode({ ...props })
-    _dom.appendChild(qrnode)
+  getQrnode = (_dom) => {
+    _dom.appendChild(new qrcode({ ...this.props }))
   }
 
   render() {
@@ -30,7 +27,17 @@ export default class Qrcode extends React.Component {
     const boxClass = classNames(className, { [prefixCls]: true });
 
     return (
-      <span className={boxClass} ref={this.qrnode}></span>
+      <span className={boxClass} ref={this.getQrnode}></span>
     );
   }
 }
+
+Qrcode.getCanvas = function (props) {
+   var canvas = document.createElement('canvas')
+    if (canvas.getContext) {
+      return new qrcode({ ...props })
+    }
+    return undefined
+}
+
+export default Qrcode;
