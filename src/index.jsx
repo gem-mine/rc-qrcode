@@ -19,7 +19,7 @@ class Qrcode extends React.Component {
   }
 
   getQrnode = (_dom) => {
-    _dom.appendChild(new qrcode({ ...this.props }))
+    _dom && _dom.appendChild(new qrcode({ ...this.props }))
   }
 
   render() {
