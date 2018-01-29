@@ -18,8 +18,24 @@ class Qrcode extends React.Component {
     super(props);
   }
 
+  spanDom = null
+
+  componentDidUpdate() {
+    this.innerHTML();
+  }
+
+  innerHTML = () => {
+    if (this.spanDom) {
+      this.spanDom.innerHTML = '';
+      this.spanDom.appendChild(new qrcode({ ...this.props })) 
+    }
+  }
+
   getQrnode = (_dom) => {
-    _dom && _dom.appendChild(new qrcode({ ...this.props }))
+    if( _dom ){
+      this.spanDom = _dom;
+      this.innerHTML(); 
+    }
   }
 
   render() {
