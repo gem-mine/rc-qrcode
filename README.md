@@ -6,10 +6,64 @@
 ## Usage
 
 ```js
-import Qrcode from '@sdp.nd/rc-qrcode';
+import Qrcode from '@gem-mine/rc-qrcode';
 import React from 'react';
 import ReactDOM from 'react-dom';
 ReactDOM.render(<Qrcode />, container);
+```
+
+### 基本使用
+
+基本使用
+
+```jsx
+import Qrcode from "@gem-mine/rc-qrcode";
+
+class Demo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    let _p = {
+      text: '2017.03.29',
+    };
+    return (
+      <div>
+        <Qrcode {..._p} />
+      </div>
+    );
+  }
+}
+ReactDOM.render(<Demo />, mountNode);
+```
+
+### 二维码图案
+
+二维码图案
+
+```jsx
+import Qrcode from "@gem-mine/rc-qrcode";
+
+class Demo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    let _p = {
+      text: '2017.12.05',
+      image: '//cs.101.com/v0.1/static/fish/image/11.png?serviceName=fish',
+    };
+    return (
+      <div>
+        <Qrcode {..._p} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 ## API
