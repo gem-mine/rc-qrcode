@@ -13,3 +13,4 @@ Thumbs.db
 *.log
 *.log.*
 npm-debug.log
+.history

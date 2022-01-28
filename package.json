@@ -1,6 +1,6 @@
 {
   "name": "@gem-mine/rc-qrcode",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "rc-qrcode",
   "keywords": [
     "react",
@@ -62,7 +62,7 @@
     "shx": "^0.2.2"
   },
   "dependencies": {
-    "classnames": "~2.2.0",
-    "extend": "^3.0.1"
+    "extend": "^3.0.1",
+    "classnames": "^2.2.0"
   }
 }
